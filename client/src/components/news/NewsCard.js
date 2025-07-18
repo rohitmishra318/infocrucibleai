@@ -28,9 +28,17 @@ function NewsCard({ title, description, image, url, onVerifyClick }: NewsCardPro
         <div className="news-card-actions">
            {/* Conditionally render an "Read More" link if URL exists */}
            {url && (
-             <a href={url} target="_blank" rel="noopener noreferrer" className="read-more-link">
-               Read More
-             </a>
+             <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    onReadMore(url);
+  }}
+  className="read-more-link"
+>
+  Read More
+</a>
+
            )}
           <button onClick={handleVerify} className="verify-button">
             Verify News
